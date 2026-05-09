@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fulge Interiors | Mbarara, Uganda | Luxury Furniture & Interior Design</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefaf5;
+            color: #2c2822;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #b87b4b;
+            --primary-dark: #9a623a;
+            --secondary: #2f4b3c;
+            --accent-gold: #cdb28b;
+            --light-bg: #f9f4ec;
+            --gray-text: #5e5850;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 18px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+            backdrop-filter: blur(0px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #b87b4b, #7b593c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #3f3a34;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 4px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #ede5db;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary);
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .subhead {
+            color: var(--gray-text);
+            max-width: 650px;
+            margin-bottom: 48px;
+            font-size: 1.1rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(115deg, #f5efe7 0%, #fffbf5 100%);
+            padding: 60px 0 80px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--secondary);
+        }
+
+        .hero-content h2 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin: 24px 0 32px;
+            color: #5c5348;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-outline {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(184,123,75,0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            flex: 1;
+            background: url('https://placehold.co/700x550/dbcbb2/9b6e45?text=Elegant+Living+Interior') center/cover no-repeat;
+            border-radius: 32px;
+            min-height: 400px;
+            box-shadow: var(--shadow-md);
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02)), url('https://images.pexels.com/photos/1571460/sofa-living-room-furniture-home-1571460.jpg?auto=compress&cs=tinysrgb&w=800');
+            background-size: cover;
+            background-position: center 30%;
+        }
+
+        /* Furniture Gallery with real high-quality images (Unsplash style) */
+        .furniture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .furniture-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .furniture-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .furniture-card h3 {
+            margin: 18px 20px 8px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .furniture-card p {
+            margin: 0 20px 10px;
+            color: var(--gray-text);
+        }
+
+        .price {
+            display: block;
+            margin: 0 20px 22px;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        /* Services */
+        .services-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0 20px;
+        }
+
+        .service-item {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: 0.2s;
+        }
+
+        .service-item i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .service-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* About */
+        .about-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            line-height: 1.5;
+            color: #3e3a34;
+        }
+
+        .about-stats {
+            flex: 0.8;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat {
+            margin: 28px 0;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* feedback */
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .feedback-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: 0.2s;
+        }
+
+        .feedback-card i.fa-quote-left {
+            color: var(--accent-gold);
+            font-size: 1.6rem;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+
+        .feedback-text {
+            line-height: 1.5;
+            margin: 12px 0 20px;
+            color: #3a3630;
+        }
+
+        .client-name {
+            font-weight: 700;
+            margin-top: 8px;
+            color: var(--secondary);
+        }
+
+        .stars {
+            color: #f5b642;
+            letter-spacing: 2px;
+        }
+
+        /* Contact */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 44px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.6rem;
+            margin-bottom: 28px;
+            color: var(--secondary);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail i {
+            width: 44px;
+            height: 44px;
+            background: #f4ede4;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #e7dfd3;
+            border-radius: 30px;
+            font-family: inherit;
+            background: #fefcf9;
+            transition: 0.2s;
+        }
+
+        .input-group textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(184,123,75,0.2);
+        }
+
+        button[type="submit"] {
+            background: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: #25221e;
+            color: #ddd0c0;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: #ddd0c0;
+            margin: 0 10px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 24px;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .hero-content h2 {
+                font-size: 2.3rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .contact-flex {
+                padding: 28px;
+            }
+        }
+
+        /* High-quality furniture images (Unsplash / Pexels stock style) - rich visuals */
+        .img-sofa {
+            background-image: url('https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=600');
+        }
+        .img-bedroom {
+            background-image: url('https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=600');
+        }
+        .img-dining {
+            background-image: url('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600');
+        }
+        .img-desk {
+            background-image: url('https://images.pexels.com/photos/6457127/pexels-photo-6457127.jpeg?auto=compress&cs=tinysrgb&w=600');
+        }
+        .hero-img-real {
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05)), url('https://images.pexels.com/photos/1571468/sofa-living-room-furniture-home-1571468.jpg?auto=compress&cs=tinysrgb&w=800');
+        }
+        .about-img-feature {
+            background-image: url('https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1000');
+            background-size: cover;
+            border-radius: 32px;
+            min-height: 280px;
+            background-position: center 60%;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <h1>FULGE INTERIORS</h1>
+            <p>Mbarara · Uganda</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h2>Elevate your space with <span>Fulge elegance</span></h2>
+                <p>FULGE INTERIORS — premium furniture & bespoke interior design in Mbarara. We craft inspiring spaces, from modern minimalism to timeless African luxury.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn-primary">Request a quote</a>
+                    <a href="#furniture-showcase" class="btn-outline">View collection</a>
+                </div>
+            </div>
+            <div class="hero-image hero-img-real"></div>
+        </div>
+    </section>
+
+    <!-- FURNITURE GALLERY (Selling furniture) -->
+    <section id="furniture-showcase">
+        <div class="container">
+            <h2 class="section-title">Our signature furniture</h2>
+            <div class="subhead">Handcrafted pieces with soul — locally inspired, globally admired.</div>
+            <div class="furniture-grid">
+                <div class="furniture-card">
+                    <div class="card-img img-sofa"></div>
+                    <h3>Mbarara Velvet Sofa</h3>
+                    <p>Plush cushioning, solid wood frame, deep seat luxury.</p>
+                    <span class="price">UGX 2,250,000</span>
+                </div>
+                <div class="furniture-card">
+                    <div class="card-img img-bedroom"></div>
+                    <h3>Ankole Oak Bedframe</h3>
+                    <p>Hand-carved headboard, durable hardwood finish.</p>
+                    <span class="price">UGX 1,590,000</span>
+                </div>
+                <div class="furniture-card">
+                    <div class="card-img img-dining"></div>
+                    <h3>Savannah Dining Set</h3>
+                    <p>8-seater table + chairs, artisan wax finish.</p>
+                    <span class="price">UGX 3,890,000</span>
+                </div>
+                <div class="furniture-card">
+                    <div class="card-img img-desk"></div>
+                    <h3>Executive Studio Desk</h3>
+                    <p>Modern walnut desk with integrated storage.</p>
+                    <span class="price">UGX 1,120,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERIOR DESIGN SERVICES -->
+    <section style="background-color: var(--light-bf); background: #faf6ef;">
+        <div class="container">
+            <h2 class="section-title">Interior design mastery</h2>
+            <div class="subhead">Full-service design: from concept to completion, tailored for homes & commercial spaces.</div>
+            <div class="services-flex">
+                <div class="service-item"><i class="fas fa-drafting-compass"></i><h4>Space planning</h4><p>Smart layouts that maximize flow & function.</p></div>
+                <div class="service-item"><i class="fas fa-palette"></i><h4>Concept styling</h4><p>Color harmonies, textures & signature mood boards.</p></div>
+                <div class="service-item"><i class="fas fa-couch"></i><h4>Custom furniture</h4><p>Bespoke pieces manufactured for your unique space.</p></div>
+                <div class="service-item"><i class="fas fa-lightbulb"></i><h4>Lighting design</h4><p>Ambient, task & accent lighting concepts.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about">
+        <div class="container about-wrap">
+            <div class="about-text">
+                <h2 class="section-title">About FULGE INTERIORS</h2>
+                <p>Born and raised in Mbarara, Uganda, FULGE INTERIORS blends contemporary design with the warmth of East African craftsmanship. We believe interiors tell your story — sophistication, comfort, and authentic character.</p>
+                <p>Our team of interior architects and artisans collaborates closely with local woodworkers, weavers, and metal artists to create furniture that speaks elegance. Whether it's a cozy residential project or a flagship commercial interior, we bring Fulge’s signature touch to every corner of Western Uganda and beyond.</p>
+                <p>Since 2018, we’ve served over 300 happy clients across Mbarara, Kampala, and the region. We’re driven by quality, integrity, and timeless design.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat"><span class="stat-number">380+</span><br>Happy Clients</div>
+                <div class="stat"><span class="stat-number">1450+</span><br>Pieces Delivered</div>
+                <div class="stat"><span class="stat-number">52+</span><br>Design Projects</div>
+                <div class="stat"><span class="stat-number">100%</span><br>Ugandan Craftsmanship</div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 40px;">
+            <div class="about-img-feature" style="background-image: url('https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1000');"></div>
+        </div>
+    </section>
+
+    <!-- CUSTOMERS FEEDBACK -->
+    <section id="feedback">
+        <div class="container">
+            <h2 class="section-title">What our clients say</h2>
+            <div class="subhead">Real stories from Mbarara homes and businesses transformed by Fulge.</div>
+            <div class="feedback-grid">
+                <div class="feedback-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    <p class="feedback-text">“Fulge Interiors redesigned our entire living room and we couldn’t be happier. The furniture quality is outstanding, and their designer truly understood our vision. Best in Mbarara!”</p>
+                    <div class="client-name">— Grace Atuheire, Mbarara City</div>
+                </div>
+                <div class="feedback-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    <p class="feedback-text">“We furnished our new coffee shop with Fulge's custom tables and lounge chairs. The turnout was stunning, delivery on time, great after-sale support.”</p>
+                    <div class="client-name">— Brian Tumwebaze, The Veranda</div>
+                </div>
+                <div class="feedback-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★☆</div>
+                    <p class="feedback-text">“Excellent from consultation to installation. They provided 3D mood boards and selected perfect decor elements. Our house feels like a boutique hotel.”</p>
+                    <div class="client-name">— Dr. Faith N., Kakoba</div>
+                </div>
+                <div class="feedback-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">★★★★★</div>
+                    <p class="feedback-text">“I purchased the Savannah Dining Set and it's the heart of our home. Delivery was prompt and professional team. Highly recommended in Mbarara!”</p>
+                    <div class="client-name">— Ivan M., Ruharo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (with updated phone number: +256784690771) -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in touch</h2>
+            <div class="subhead">Visit our showroom or reach out — let’s create something beautiful together.</div>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 8px;"></i> Our location</h3>
+                    <div class="contact-detail"><i class="fas fa-location-dot"></i> <span>Plot 24, High Street, Mbarara City, Uganda (Opposite Mbarara Mall)</span></div>
+                    <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+256 784 690 771 | +256 702 123 456</span></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> <span>hello@fulgeinteriors.ug | design@fulgeinteriors.com</span></div>
+                    <div class="contact-detail"><i class="fab fa-whatsapp"></i> <span>+256 784 690 771 (WhatsApp Business)</span></div>
+                    <div class="contact-detail"><i class="far fa-clock"></i> <span>Mon–Sat: 9:00 AM – 6:30 PM | Sunday by appt.</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a message</h3>
+                    <form id="quickForm">
+                        <div class="input-group"><input type="text" placeholder="Full name" required id="nameInput"></div>
+                        <div class="input-group"><input type="email" placeholder="Email address" required id="emailInput"></div>
+                        <div class="input-group"><input type="tel" placeholder="Phone number"></div>
+                        <div class="input-group"><textarea rows="4" placeholder="Tell us about your project or furniture inquiry..."></textarea></div>
+                        <button type="submit">Send inquiry <i class="fas fa-paper-plane"></i></button>
+                        <p style="font-size: 0.8rem; margin-top: 16px;">We’ll respond within 24 hours.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div>© 2025 FULGE INTERIORS — Mbarara, Uganda. Design that endures.</div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // form simulation with success message
+    const form = document.getElementById('quickForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nameField = document.getElementById('nameInput');
+            const name = nameField ? nameField.value.trim() : 'friend';
+            alert(`✨ Thank you ${name}! Your inquiry has been received. A Fulge Interiors specialist will contact you shortly.`);
+            form.reset();
+        });
+    }
+
+    // active nav highlight on scroll
+    const sections = document.querySelectorAll('section, #home');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function setActiveLink() {
+        let current = '';
+        const scrollPosition = window.scrollY + 140;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                current = section.getAttribute('id');
+            }
+        });
+        if (!current && window.scrollY < 150) current = 'home';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const hrefId = link.getAttribute('href').substring(1);
+            if (hrefId === current) link.classList.add('active');
+        });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+</script>
+</body>
+</html>
